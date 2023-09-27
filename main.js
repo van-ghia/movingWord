@@ -10,7 +10,7 @@ function draw() {
 }
   
 function drawMSG(msg) {
-    msg.speed = 20;
+    msg.speed = 10;
     msg.draw();
     msg.bounce();
     msg.move();
