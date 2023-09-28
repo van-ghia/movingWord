@@ -1,6 +1,6 @@
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    msg = new MSG("CÚT");
+    msg = new MSG("BU BUOI");
 }
   
 function draw() {
@@ -10,7 +10,7 @@ function draw() {
 }
   
 function drawMSG(msg) {
-    msg.speed = 10;
+    msg.speed = document.getElementById("speed").value;
     msg.draw();
     msg.bounce();
     msg.move();
@@ -20,7 +20,7 @@ function MSG(msg) {
     this.size = windowWidth / 10;
     this.x = random(this.size, windowWidth - this.size * 2);
     this.y = random(this.size, windowHeight - this.size * 2);
-    this.speed = 1;
+    this.speed = 10;
     this.xvel = random([-1, 1]);
     this.yvel = random([-1, 1]);
     this.msg = msg;
