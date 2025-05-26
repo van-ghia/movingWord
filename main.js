@@ -19,13 +19,13 @@ function drawMSG(msg) {
 function MSG(msg) {
     this.size = windowWidth / 10;
     this.x = random(this.size, windowWidth - this.size * 2);
-    this.y = random(this.size, windowHeight - this.size * 2);
+    this.y = random(this.size, windowHeight - windowHeight / 5);
     this.speed = 10;
     this.xvel = random([-1, 1]);
     this.yvel = random([-1, 1]);
     this.msg = msg;
     this.xscl = msg.length * this.size * 0.625;
-    this.yscl = this.size;
+    this.yscl = windowHeight / 10;
     
     this.draw = function() {
       textSize(this.size);
@@ -39,7 +39,7 @@ function MSG(msg) {
     
     this.bounce = function() {
       let lower_bound = this.y + this.yscl > windowHeight && this.yvel > 0;
-      let upper_bound = this.y < 25 && this.yvel < 0;
+      let upper_bound = this.y < windowHeight / 10 && this.yvel < 0;
       let right_bound = this.x + this.xscl > windowWidth && this.xvel > 0;
       let left_bound = this.x < 0 && this.xvel < 0;
       if (lower_bound || upper_bound) {
