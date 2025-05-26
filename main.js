@@ -1,6 +1,6 @@
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    msg = new MSG("BU BUOI");
+    msg = new MSG("VJP");
 }
   
 function draw() {
