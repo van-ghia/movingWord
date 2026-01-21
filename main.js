@@ -17,9 +17,9 @@ function drawMSG(msg) {
 }
   
 function MSG(msg) {
-    this.size = windowWidth / 10;
-    this.x = random(this.size, windowWidth - this.size * 2);
-    this.y = random(this.size, windowHeight - windowHeight / 5);
+    this.size = windowWidth / 30;
+    this.x = random(this.size, windowWidth);
+    this.y = random(this.size, windowHeight);
     this.speed = 10;
     this.xvel = random([-1, 1]);
     this.yvel = random([-1, 1]);
