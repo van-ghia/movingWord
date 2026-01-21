@@ -1,6 +1,6 @@
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    msg = new MSG("VJP");
+    msg = new MSG("Chúc mừng sinh nhật ^^");
 }
   
 function draw() {
