@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -8,14 +8,58 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="">
+  <style>
+    /* Keep canvas behind UI controls and make the page full-bleed */
+    body { margin: 0; overflow: hidden; }
+    #speedController {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 10;
+      background: rgba(255,255,255,0.85);
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      font-family: sans-serif;
+    }
+    #fireworks-toggle {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 10;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      font-family: sans-serif;
+      cursor: pointer;
+    }
+    /* p5 adds class p5Canvas to the created canvas */
+    canvas.p5Canvas {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      z-index: 0 !important;
+    }
+    .ctrl-row { display: flex; gap: 0.5rem; align-items: center; }
+    .ctrl-row label { margin-right: 0.25rem; }
+  </style>
 </head>
 
 <body>
   <div id="speedController">
-    Speed:
-    <input type="range" id="speed" value = 13>
-    <span id="speedCounter">0</span>
+    <div class="ctrl-row">
+      <label for="speed">Speed:</label>
+      <input type="range" id="speed" value="13">
+      <span id="speedCounter">0</span>
+    </div>
+    <div class="ctrl-row" style="margin-top:0.5rem;">
+      <label for="intensity">Intensity:</label>
+      <input type="range" id="intensity" min="10" max="200" value="100">
+      <span id="intensityCounter">100</span>
+    </div>
   </div>
+
+  <!-- Fireworks toggle -->
+  <button id="fireworks-toggle" aria-pressed="false">Toggle Fireworks</button>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
   <script src="main.js"></script>
 </body>
